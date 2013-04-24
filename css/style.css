@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/*初始化*/
+h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+body,button,input,select,textarea{font-size:12px;font-family:"微软雅黑",arial,sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+em{font-style:normal}
+small{font-size:12px}
+ul,ol{list-style:none}
+a{text-decoration:none;color:#000;}
+a:link{color:#000;}
+a:visited{color:#000;}
+a:hover{color:#336699;}
+a:active{color:#336699;}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+img{-ms-interpolation-mode:bicubic}
+textarea{resize:vertical}
+html{
+	color:#000;
+	overflow:hidden;
+	background:#fff;
+	}
+	
+/*Rulers*/
+div.RulerMenu{
+	position:absolute;
+	top:0px;
+	left:0px;
+	}
+div.RulerTop,div.RulerLeft{
+	position:absolute;
+	}
+div.RulePage{
+
+	}
+.RulePage iframe.ifRulePage{
+	border:0px;
+	}
+div.CursorCross{
+	display:none;
+	float:left;
+	position:absolute;
+	cursor:crosshair;
+	z-index:999;
+	background:url("./images/transparent.gif");
+	}
+div.Lines{
+	position:absolute;
+	float:left;
+	top:0px;
+	left:0px;
+	z-index:9999;
+	background:url("./images/transparent.gif");
+	cursor:crosshair;
+}
