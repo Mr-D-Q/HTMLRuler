@@ -16,9 +16,9 @@ function LineInitialize(LineWidth,LineType,LineColor){
 	}
 
 $(document).ready(function(){
-	setMenuColor("#ccc");
+	setButtonColor("#ccc");
 	setRulerColor("#eee");
 	RulePageResize();
 	RulerResize(RulerSize);
-	LineInitialize("2px","solid","#6cf");
+	LineInitialize("1px","solid","#08f");
 });

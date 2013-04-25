@@ -25,10 +25,11 @@ html{
 	}
 	
 /*Rulers*/
-div.RulerMenu{
+div.RulerButton{
 	position:absolute;
 	top:0px;
 	left:0px;
+	z-index:9999999;
 	}
 div.RulerTop,div.RulerLeft{
 	position:absolute;
@@ -45,14 +46,55 @@ div.CursorCross{
 	position:absolute;
 	cursor:crosshair;
 	z-index:999;
-	background:url("./images/transparent.gif");
+	background:transparent;
+	}
+div.CursorPad{
+	color:#333;
+	background:url("../images/transparent-yellow.png");
+	position:absolute;
+	width:72px;
+	height:41px;
+	border:1px solid #ff8;
+	line-height:1.5em;
+	font-size:12px;
+	padding:8px;
+	}
+div.CursorPad p{
+	-webkit-margin-before:0;
+	-webkit-margin-after:0;
+	}
+div.CursorPad p span.pixelValue{
+	margin:0 5px;
+	font-weight:bold;
+	}
+div.CursorPad p span.pixelTxt{
+	float:right;
 	}
 div.Lines{
+	display:none;
 	position:absolute;
 	float:left;
 	top:0px;
 	left:0px;
 	z-index:9999;
-	background:url("./images/transparent.gif");
+	background:transparent;
 	cursor:crosshair;
-}
+	}
+/*Graduation*/
+div.GraShort , div.GraLong{
+	position:absolute;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
+	}
+div.RulerTop div.GraShort{
+	height:40%;
+	}
+div.RulerTop div.GraLong{
+	height:80%;
+	}
+div.RulerLeft div.GraShort{
+	width:40%;
+	}
+div.RulerLeft div.GraLong{
+	height:80%;
+	}
