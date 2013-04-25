@@ -83,18 +83,24 @@ div.Lines{
 /*Graduation*/
 div.GraShort , div.GraLong{
 	position:absolute;
-	border-left:1px solid #333;
-	border-right:1px solid #333;
 	}
 div.RulerTop div.GraShort{
 	height:40%;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
 	}
 div.RulerTop div.GraLong{
 	height:80%;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
 	}
 div.RulerLeft div.GraShort{
 	width:40%;
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
 	}
 div.RulerLeft div.GraLong{
-	height:80%;
+	width:80%;
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
 	}
