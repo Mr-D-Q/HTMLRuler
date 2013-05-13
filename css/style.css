@@ -46,16 +46,18 @@ div.CursorCross{
 	position:absolute;
 	cursor:crosshair;
 	z-index:999;
-	background:transparent;
+	top:0px;
+	left:0px;
+	background:url("../images/transparent.gif");
 	}
 div.CursorPad{
 	color:#333;
 	background:url("../images/transparent-yellow.png");
 	position:absolute;
 	width:72px;
-	height:41px;
+	height:41px;/*The golden ratio*/
 	border:1px solid #ff8;
-	line-height:1.5em;
+	line-height:20px;
 	font-size:12px;
 	padding:8px;
 	}
@@ -77,30 +79,25 @@ div.Lines{
 	top:0px;
 	left:0px;
 	z-index:9999;
-	background:transparent;
 	cursor:crosshair;
+	background:url("../images/transparent.gif");
 	}
 /*Graduation*/
 div.GraShort , div.GraLong{
 	position:absolute;
+	font-size:10px;
 	}
 div.RulerTop div.GraShort{
 	height:40%;
-	border-left:1px solid #333;
-	border-right:1px solid #333;
 	}
 div.RulerTop div.GraLong{
 	height:80%;
-	border-left:1px solid #333;
-	border-right:1px solid #333;
 	}
 div.RulerLeft div.GraShort{
 	width:40%;
-	border-top:1px solid #333;
-	border-bottom:1px solid #333;
 	}
 div.RulerLeft div.GraLong{
 	width:80%;
-	border-top:1px solid #333;
-	border-bottom:1px solid #333;
+	text-align:right;
+	word-wrap:break-word;
 	}

@@ -1,13 +1,18 @@
 
 //Initialize
 $(document).ready(function(){
-	setButtonColor("#ccc");
-	setRulerColor("#eee");
 	RulePageResize();
-	RulerResize(RulerSize);
-	LineInitialize("1px","solid","#08f");
-	GraduationInitialize();
+	RulerInitialize(RulerSize,RulerColor_dark,ButtonColor_dark);
+	LineInitialize(GraWeight+"px",GraType,LinesColor);
+	GraduationInitialize(GraWeight+"px",GraType,GraColor);
+	GraduationPaint();
 });
+
+//When the document loaded, repaint the rulers.
+$("div.RulePage").load("http://www.baidu.com/index.htm",function(){
+	window.alert("Finish!");
+});
+
 
 //Switch ON/OFF the PageRuler when RulerButton clicked.
 $(function(){
@@ -16,16 +21,36 @@ $(function(){
 			case 1:
 				if($("div.CursorCross").css("display")=="none"){
 					$("div.CursorCross").show();
-					setButtonColor("#0cf")
-					setRulerColor("#cff");
+					$("div.RulerTop").css("background",RulerColor);
+					$("div.RulerLeft").css("background",RulerColor);
+					$("div.RulerButton").css("background",ButtonColor);
 				}
 				else{
 					$("div.CursorCross").hide();
 					$("div.Lines").hide();
-					setButtonColor("#ccc");
-					setRulerColor("#eee");
+					$("div.RulerTop").css("background",RulerColor_dark);
+					$("div.RulerLeft").css("background",RulerColor_dark);
+					$("div.RulerButton").css("background",ButtonColor_dark);
 				}
 				break;
+			case 3:
+				$.dialog({
+					width: '750px', 
+					height: '450px',
+					title: '',
+					content: 'url:http://www.126.com',
+					lock:true,
+					button: [ 
+							 { 
+								 name: '确认',
+								 callback: function () {
+									 var url = "http://trade.myfund.com/kfit/page/common/foward.jsp?business=039&fundcode=";
+									 window.open(url + code);
+								 },
+								 focus: true 
+							 }       
+						 ]  
+				});
 		}
 	});
 });
@@ -40,23 +65,23 @@ $(function(){
 //Change position of lines while mouse move.
 $(function(){
 	$("div.CursorCross").mousemove(function(e){
-		if(e.pageX < RulerSize || e.pageY < RulerSize){
-			//$("div.Lines").hide();
-		}
-		else{
+		if (e.pageX >= RulerSize){
 			$("div.Lines").width(e.pageX);
-			$("div.Lines").height(e.pageY);
-			showCursorPad(e.pageX , e.pageY);
-		}
-	});
-	$("div.Lines").mousemove(function(e){
-		if(e.pageX < RulerSize || e.pageY < RulerSize){
-			//$(this).hide();
 		}
 		else{
-			$(this).width(e.pageX);
-			$(this).height(e.pageY);
-			showCursorPad(e.pageX , e.pageY);
+			showCursorPad(RulerSize,e.pageY);
+			$("div.Lines").width(RulerSize);
 		}
+		if (e.pageY >= RulerSize){
+			$("div.Lines").height(e.pageY);
+		}
+		else{
+			showCursorPad(e.pageX,RulerSize);
+			$("div.Lines").height(RulerSize);
+		}
+		if(e.pageX >= RulerSize && e.pageY >= RulerSize){
+			showCursorPad(e.pageX,e.pageY);
+		}
+
 	});
 });
